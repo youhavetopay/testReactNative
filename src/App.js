@@ -23,6 +23,7 @@ import Count from './components/Count'
 import { createStore } from 'redux'
 import { Provider } from 'react-redux'
 import reducers from './reducers'
+import MyTextInput from './components/MyTextInput'
 
 import {
   Header,
@@ -34,6 +35,7 @@ import {
 
 const izone = '김민주 짱짱'
 let testNum = 0
+
 const App = () => {
   return (
     <>
@@ -41,12 +43,7 @@ const App = () => {
       <Provider store={createStore(reducers)}>
       <View style={{flex:1, justifyContent:'center', alignItems:'center', padding:10}}>
         <Text style={styles.text}>izone test app {izone}</Text>
-        
-        
-        <TextInput style={styles.input}>
-
-        </TextInput>
-        <Text></Text>
+        <MyTextInput></MyTextInput>
       </View>
       </Provider>
     </>
