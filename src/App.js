@@ -40,17 +40,22 @@ const App = () => {
   return (
     <>
       
-      <Provider store={createStore(reducers)}>
+      
       <View style={{flex:1, justifyContent:'center', alignItems:'center', padding:10}}>
-        <Text style={styles.text}>izone test app {izone}</Text>
-        <MyTextInput></MyTextInput>
+        <Text style={styles.title}>Text Convert MoresCode</Text>
+        <MyTextInput></MyTextInput>  
       </View>
-      </Provider>
+      
     </>
   );
 };
 
 const styles = StyleSheet.create({
+  title:{
+    fontSize:20,
+    fontWeight:'bold'
+  },
+
   input:{
     padding:10,
     width:'100%',
