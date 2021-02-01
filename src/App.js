@@ -46,6 +46,7 @@ const App = () => {
         <TextInput style={styles.input}>
 
         </TextInput>
+        <Text></Text>
       </View>
       </Provider>
     </>
