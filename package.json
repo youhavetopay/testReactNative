@@ -10,6 +10,7 @@
     "lint": "eslint ."
   },
   "dependencies": {
+    "morse-decoder": "3.0.1",
     "react": "16.13.1",
     "react-native": "0.63.4",
     "react-native-paper": "4.7.1",
