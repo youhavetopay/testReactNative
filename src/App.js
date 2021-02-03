@@ -15,6 +15,9 @@ import {
   Text,
   TextInput,
   StatusBar,
+  Image,
+  TouchableOpacity,
+
 } from 'react-native';
 
 import Count from './components/Count'
@@ -24,7 +27,10 @@ import { Provider } from 'react-redux'
 import reducers from './reducers'
 
 import MyTextInput from './components/MyTextInput'
-import Test from './components/Test'
+import NameInfo from './components/NameInfo'
+import NameInfoList from './components/NameInfoList'
+
+
 
 import {
   Header,
@@ -34,40 +40,27 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
-const izone = '김민주 짱짱'
-let testNum = 0
-
-let appInfo = {
-  'name':'아이즈원',
-  'age':'2',
-  'songName':'파노라마'
-}
-
 class App extends Component {
 
-  state={
-    name:''
-  }
-
-  handleCreate = (data) =>{
-    console.log(data);
-    this.setState({name:data.name})
-  }
+  
 
   render (){
+
     return(
       <>
-      
-      
-      <View style={{flex:1, justifyContent:'center', alignItems:'center', padding:10}}>
-        <Text style={styles.title}>Text Convert MoresCode</Text>
-        <MyTextInput onCreate={this.handleCreate}></MyTextInput>
-        <Test name={this.state.name}></Test>
 
-        {
-          testNum == 0 ? <Text>아이즈원</Text> : <Text>피에스타</Text>
-        }
-      </View>
+      <SafeAreaView style={styles.backBody}>
+        <View style={{flex:1,  alignItems:'center'}}></View>
+        <View style={{flex:3,  alignItems:'center', padding:10}}>
+          <Text style={styles.title}>Eyes On Me!</Text>
+          <Image style={{width:250, height:100}} source={require('./Image/izone_logo.png')}></Image>
+          <TextInput style={{backgroundColor:'white', borderRadius:20, width:250, height:50, paddingLeft:20,marginTop:30}} placeholder='아이디' ></TextInput>
+          <TextInput style={{backgroundColor:'white', borderRadius:20, width:250, height:50, paddingLeft:20,marginTop:10, marginBottom:20}} placeholder='비밀번호' ></TextInput>
+          <TouchableOpacity style={{backgroundColor:'hotpink', width:250, height:50, borderRadius:20, justifyContent:'center'}}><Text style={{color:'white', textAlign:'center'}}>로그인</Text></TouchableOpacity>
+        </View>
+        <View style={{flex:1,  alignItems:'center'}}></View>
+      </SafeAreaView>
+      
       
     </>
     )
@@ -75,22 +68,15 @@ class App extends Component {
 };
 
 const styles = StyleSheet.create({
-  title:{
-    fontSize:20,
-    fontWeight:'bold'
-  },
-
-  input:{
-    padding:10,
+  backBody:{
     width:'100%',
-    borderColor:'black',
-    borderWidth:2,
-    marginLeft:20,
-    marginRight:20
-  
+    height:'100%',
+    backgroundColor:'pink'
   },
-  text:{
-    margin:10
+  title:{
+    color:'white',
+    fontSize:30,
+    fontWeight:'bold'
   }
 });
 

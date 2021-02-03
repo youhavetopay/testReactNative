@@ -125,6 +125,10 @@ class MyTextInput extends Component{
         // this.setState({text:code})
     }
 
+    testJson = {
+        name:''
+    }
+
     transCodeToText = () =>{
 
         let text = morse.decode(this.state.text)
@@ -134,6 +138,8 @@ class MyTextInput extends Component{
     }
 
     handSubmit = ()=>{
+
+        console.log(this.state);
 
         this.props.onCreate(this.state)
 
@@ -152,6 +158,8 @@ class MyTextInput extends Component{
                 
                 <RadioButton.Group style={style.flex_row}>
                     <TextInput
+                        style={style.input}
+                        value={this.state.name}
                         onChangeText={(text)=>{this.setState({
                             name:text
                         })}}
@@ -159,7 +167,6 @@ class MyTextInput extends Component{
                     >
 
                     </TextInput>
-                    <Text>{this.state.name}adw</Text>
                     <TouchableOpacity 
                     style={{backgroundColor:'pink'}}
                     onPress={this.handSubmit}
@@ -178,7 +185,7 @@ class MyTextInput extends Component{
                     </View>
                 </RadioButton.Group>
                 
-                <TextInput 
+                {/* <TextInput 
                 style={style.input} 
                 onChangeText={(text)=>{this.setState({inputText:text})}}
                 autoCompleteType={'off'}
@@ -186,16 +193,16 @@ class MyTextInput extends Component{
                 multiline ={true}
                 ></TextInput>
                
-                {/* <TouchableOpacity style={style.btn} onPress = {this.transTextToCode}>
+                <TouchableOpacity style={style.btn} onPress = {this.transTextToCode}>
                     <Text style={{textAlign:'center'}}>
                         convert
                     </Text>
-                </TouchableOpacity> */}
+                </TouchableOpacity>
                 <Text style={style.text}>{this.state.text}</Text>
                 <TouchableOpacity style={style.btn} onPress = {this.transTextToCode}>
                     <Text style={{textAlign:'center'}}>Convert to Text</Text>
                 </TouchableOpacity>
-                <Text>{this.state.text}</Text>
+                <Text>{this.state.text}</Text> */}
             </View>
         )
     }
